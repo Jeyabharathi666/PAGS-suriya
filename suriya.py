@@ -15,7 +15,7 @@ Charting_url = 'https://chartink.com/screener/process'
 
 spreadsheet_name = "suriya"
 worksheet_letter = "p"
-total_no_of_worksheet = 29
+total_no_of_worksheet = 27
 
 scope = [
   'https://www.googleapis.com/auth/spreadsheets',
@@ -29,14 +29,12 @@ creds = ServiceAccountCredentials.from_json_keyfile_dict(
     google_credentials_dict, scope
 )
 
-# client = gspread.authorize(creds, client_factory=gspread.client.BackoffClient)
 client = gspread.authorize(creds)
 
 with open(file="conditions.txt", mode="r") as file:
   conditions = file.readlines()
 total_conditions = len(conditions)
 print(f"total conditions: {total_conditions}")
-
 
 def GetDataFromChartink(payload, worksheet_no):
 
@@ -58,7 +56,6 @@ def GetDataFromChartink(payload, worksheet_no):
   else:
     update_sheet_error(worksheet_no)
 
-
 def create_worksheet():
   sh = client.create(spreadsheet_name)
   for i in range(1, total_no_of_worksheet):
@@ -66,7 +63,6 @@ def create_worksheet():
     print(letter)
     sheshadri1_test = sh.add_worksheet(letter, rows=100, cols=100)
   print("[+] succesfully created the worksheet...")
-
 
 def update_sheet(worksheet, data):
   data = data.sort_values(by='per_chg', ascending=False)
@@ -80,25 +76,14 @@ def update_sheet(worksheet, data):
   sheshadri1_test.update([data.columns.values.tolist()] + data.values.tolist())
   sheshadri1_test.format('A1:G1', {'textFormat': {'bold': True}})
 
-
 def update_sheet_error(worksheet):
   print(f"[-] Update Sheet {worksheet} error")
   sheshadri1_test = client.open(spreadsheet_name).worksheet(worksheet)
   sheshadri1_test.clear()
   sheshadri1_test.update_cell(1, 1, "no data")
 
-
-
-
-
 with ThreadPoolExecutor() as executor:
   futures = [ executor.submit(GetDataFromChartink, f"{conditions[i]}", f"p{i+1}") for i in range(total_conditions)]
   print("[+] Getting data from chart link please wait...")
   wait(futures)
   print("[+] Successfully Updated the Data to sheet")
-
-print("Waiting for 1 sec before updating")
-time.sleep(1)
-
-# uncomment to create a worksheet and spreadsheet if needed
-# create_worksheet()
