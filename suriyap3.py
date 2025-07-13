@@ -3,14 +3,9 @@ from datetime import datetime
 import google_sheets  # assumes you have this module ready like in your Economic Times script
 import time
 URL = ["https://chartink.com/screener/copy-copy-copy-sreelakshmi-guruvayoorappan-b-atr-volume-rocket-8",
-       "https://chartink.com/screener/hammar-cash-low-paradaily",
-       "https://chartink.com/screener/copy-nk-sir-s-uptrend-stocks-all-time-uptrend",
        "https://chartink.com/screener/agp-bullish2-p5",
-       "https://chartink.com/screener/1-longtrend-ve",
-       "https://chartink.com/screener/copy-copy-down-tranding-buy-at-low-7",
        "https://chartink.com/screener/copy-akshat-monthly-momentum-37",
        "https://chartink.com/screener/all-u1-nk-sir-s-uptrend-stocks-all-time-uptrend",
-       "https://chartink.com/screener/aaa8-vp-rocket",
        "https://chartink.com/screener/aaa13-vp-sheshapathi",
        "https://chartink.com/screener/agp-shesha-bulloong1",
        "https://chartink.com/screener/smbg2-new-multibegger-stocks-for-next-few-days",
@@ -23,14 +18,10 @@ URL = ["https://chartink.com/screener/copy-copy-copy-sreelakshmi-guruvayoorappan
        "https://chartink.com/screener/copy-copy-bb-blaster-2",
        "https://chartink.com/screener/copy-the-best-btst-193",
        "https://chartink.com/screener/22-nw-shesha-magic-buy-love",
-       "https://chartink.com/screener/copy-atp-above-long-cash-2",
-       "https://chartink.com/screener/22-nw-shesha-magic-buy-love-f-o",
-       "https://chartink.com/screener/agp-bullong-2-1",
-       "https://chartink.com/screener/agp-bullish2",
-       "https://chartink.com/screener/copy-atp-above-long-24"]
+       "https://chartink.com/screener/copy-atp-above-long-cash-2" ]
        
 sheet_id = "1bKrdupQL1LXAOXwmM1YsoN3xoGiMfS7pgzTkQFC3cjw"
-worksheet_name = ["p1","p2","p3","p4","p5","p6","p7","p8","p9","p10","p11","p12","p13","p14","p15","p16","p17","p18","p19","p20","p21","p22","p23","p24","p25","p26"]
+worksheet_name = ["p1","p2","p3","p4","p5","p6","p7","p8","p9","p10","p11","p12","p13","p14","p15","p16","p17"]
 
 def scrape_chartink(URL, worksheet_name):
     print(f"🚀 Starting Chartink scrape for {worksheet_name}...")
