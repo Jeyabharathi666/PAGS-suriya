@@ -8,25 +8,21 @@ URL = ["https://chartink.com/screener/copy-copy-copy-sreelakshmi-guruvayoorappan
        "https://chartink.com/screener/agp-shesha-bulloong1",
        "https://chartink.com/screener/shesha-magic-buy-love",
        "https://chartink.com/screener/copy-mahi-2-master-trader-vishnu-final-40-address-this-urgent-bellinaire-38-to-47-3",
-       "https://chartink.com/screener/copy-the-best-btst-193",
-       "https://chartink.com/screener/22-nw-shesha-magic-buy-love",
-       "https://chartink.com/screener/copy-bullish-for-next-day-future-and-option-trading-animesh-2",
        "https://chartink.com/screener/agp-bullish2",
-       "https://chartink.com/screener/copy-atp-above-long-24",       
-       "https://chartink.com/screener/copy-copy-copy-future-and-option-pin-bar-pranshu-tiwari-2",
+       "https://chartink.com/screener/copy-atp-above-long-24",
        "https://chartink.com/screener/22-nw-shesha-magic-buy-love-fut",
        "https://chartink.com/screener/copy-nr-f-0",
-       "https://chartink.com/screener/copy-f-0-6",
-       "https://chartink.com/screener/positional-f-0-at-3-00",
-       "https://chartink.com/screener/copy-stocks-for-f-0",
        "https://chartink.com/screener/rk-position-f-0",
-       "https://chartink.com/screener/copy-richie-rich-f-0-2",
-       "https://chartink.com/screener/copy-f-0-future",
-       "https://chartink.com/screener/copy-atr-volume-f-o-200-577",
-       "https://chartink.com/screener/copy-copy-copy-rocket-booster-1-4"]
+       "https://chartink.com/screener/copy-f-0-future
+       "https://chartink.com/screener/smbg2-new-multibegger-stocks-for-next-few-days",
+       "https://chartink.com/screener/cash-tss-momentum-long",
+       "https://chartink.com/screener/copy-atp-above-long-cash-2",
+       "https://chartink.com/screener/copy-copy-future-and-options-2-1-4",
+       "https://chartink.com/screener/copy-atp-above-long-fut1",
+       "https://chartink.com/screener/copy-copy-daily-min-f-0-trade-2']
        
 sheet_id = "1bKrdupQL1LXAOXwmM1YsoN3xoGiMfS7pgzTkQFC3cjw"
-worksheet_name = ["p1","p2","p3","p4","p5","p6","p7","p8","p9","p10","p11","p12","p13","p14","p15","p16","p17","p18","p19","p20","p21","p22"]
+worksheet_name = ["p1","p2","p3","p4","p5","p6","p7","p8","p9","p10","p11","p12","p13","p14","p15","p16","p17","p18"]
 
 def scrape_chartink(URL, worksheet_name):
     print(f"🚀 Starting Chartink scrape for {worksheet_name}...")
