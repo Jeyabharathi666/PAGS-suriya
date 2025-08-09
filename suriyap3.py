@@ -12,7 +12,7 @@ URL = ["https://chartink.com/screener/copy-copy-copy-sreelakshmi-guruvayoorappan
        "https://chartink.com/screener/copy-atp-above-long-24",
        "https://chartink.com/screener/22-nw-shesha-magic-buy-love-fut",
        "https://chartink.com/screener/copy-nr-f-0",
-       "https://chartink.com/screener/rk-position-f-0",
+       "https://chartink.com/screener/copy-rk-position-f-0",
        "https://chartink.com/screener/copy-f-0-future",
        "https://chartink.com/screener/smbg2-new-multibegger-stocks-for-next-few-days",
        "https://chartink.com/screener/cash-tss-momentum-long",
