@@ -147,7 +147,3 @@ for index, url in enumerate(URLS):
     scrape_chartink(url, worksheet_names[index])
     print(f"⏱️ '{worksheet_names[index]}' update finished.")
 
-
-for i in URL:
-    scrape_chartink(i,worksheet_name[URL.index(i)])
-    print(worksheet_name[URL.index(i)]," updated")
