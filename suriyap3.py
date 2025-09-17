@@ -105,44 +105,58 @@ def scrape_chartink(url, worksheet_name):
         )
         page = context.new_page()
 
+        headers = ["Sr", "Stock Name", "Symbol", "Links", "Change", "Price", "Volume"]
+
         try:
             page.goto(url, wait_until='networkidle')
             page.screenshot(path=f"{worksheet_name}_page_loaded.png", full_page=True)
 
-            time.sleep(3)  # Allow time for AJAX content
+            time.sleep(3)  # Allow AJAX content to load
 
             if page.is_visible("text='No records found'"):
-                print(f"⚠️ No records found on {url}. Skipping update.")
-                rows = []
+                print(f"⚠️ No records found on {url}. Writing 'No Data'.")
+                rows = [["No Data"]]
             else:
-                page.wait_for_selector("div.relative table tbody tr", timeout=60000)
-                table_rows = page.query_selector_all("div.relative table tbody tr")
+                try:
+                    page.wait_for_selector("div.relative table tbody tr", timeout=60000)
+                    table_rows = page.query_selector_all("div.relative table tbody tr")
 
-                print(f"📥 Extracted {len(table_rows)} rows.")
+                    print(f"📥 Extracted {len(table_rows)} rows.")
 
-                rows = []
-                for row in table_rows:
-                    cells = row.query_selector_all("td")
-                    row_data = [cell.inner_text().strip() for cell in cells]
-                    rows.append(row_data)
+                    rows = []
+                    for row in table_rows:
+                        cells = row.query_selector_all("td")
+                        row_data = [cell.inner_text().strip() for cell in cells]
+                        rows.append(row_data)
 
-            headers = ["Sr", "Stock Name", "Symbol", "Links", "Change", "Price", "Volume"]
+                    if len(rows) == 0:
+                        print(f"⚠️ Table found but no rows present. Writing 'No Data'.")
+                        rows = [["No Data"]]
+
+                except PlaywrightTimeoutError:
+                    print(f"❌ Table not found on {url}. Writing 'No Data'.")
+                    rows = [["No Data"]]
+
             google_sheets.update_google_sheet_by_name(sheet_id, worksheet_name, headers, rows)
 
-            now = datetime.now().strftime("Last updated on: %Y-%m-%d %H:%M:%S")
-            google_sheets.append_footer(sheet_id, worksheet_name, [now])
-
-            print(f"✅ Worksheet '{worksheet_name}' updated successfully.")
-
         except PlaywrightTimeoutError:
-            print(f"❌ Timeout: Failed to locate the table on {url}")
+            print(f"❌ Timeout: Failed to locate table or load page at {url}. Writing 'No Data'.")
+            rows = [["No Data"]]
+            google_sheets.update_google_sheet_by_name(sheet_id, worksheet_name, headers, rows)
 
         except Exception as e:
-            print(f"❌ Unexpected error: {e}")
+            print(f"❌ Unexpected error: {e}. Writing 'No Data'.")
+            rows = [["No Data"]]
+            google_sheets.update_google_sheet_by_name(sheet_id, worksheet_name, headers, rows)
 
         finally:
             page.screenshot(path=f"{worksheet_name}_debug.png", full_page=True)
             browser.close()
+
+        now = datetime.now().strftime("Last updated on: %Y-%m-%d %H:%M:%S")
+        google_sheets.append_footer(sheet_id, worksheet_name, [now])
+
+        print(f"✅ Worksheet '{worksheet_name}' update finished.")
 
 for index, url in enumerate(URLS):
     scrape_chartink(url, worksheet_names[index])
