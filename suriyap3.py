@@ -23,12 +23,20 @@ URLS = [
     "https://chartink.com/screener/copy-atp-above-long-fut1",
     "https://chartink.com/screener/copy-copy-daily-min-f-0-trade-2",
     "https://chartink.com/screener/copy-atr-volume-f-o-200-wkly-rsi-70-new",
-    "https://chartink.com/screener/copy-multibagar-5"]
+    "https://chartink.com/screener/copy-multibagar-5",
+    "https://chartink.com/screener/copy-the-best-btst-193",
+    "https://chartink.com/screener/22-nw-shesha-magic-buy-love",
+    "https://chartink.com/screener/copy-richie-rich-f-0-2",
+    "https://chartink.com/screener/all-u1-nk-sir-s-uptrend-stocks-all-time-uptrend",
+    "https://chartink.com/screener/copy-sjbl6ch-shesha-buy-bollinger-band-weekly",
+    "https://chartink.com/screener/copy-copy-bb-blaster-2",
+    "https://chartink.com/screener/copy-atr-volume-f-o-200-wkly-rsi-70-16"
+    ]
        
 sheet_id = "1bKrdupQL1LXAOXwmM1YsoN3xoGiMfS7pgzTkQFC3cjw"
 worksheet_names = [
     "p1","p2","p3","p4","p5","p6","p7","p8","p9","p10",
-    "p11","p12","p13","p14","p15","p16","p17","p18","p19","p20"]
+    "p11","p12","p13","p14","p15","p16","p17","p18","p19","p20","p21","p22","p23","p24","p25","p26","p27"]
 
 def scrape_chartink(url, worksheet_name):
     print(f"\n🚀 Starting scrape for '{worksheet_name}'")
