@@ -3,7 +3,8 @@ from datetime import datetime
 import google_sheets
 import time
 
-URLS = ["https://chartink.com/screener/copy-copy-copy-sreelakshmi-guruvayoorappan-b-atr-volume-rocket-8",
+URLS = [
+    "https://chartink.com/screener/copy-copy-copy-sreelakshmi-guruvayoorappan-b-atr-volume-rocket-8",
     "https://chartink.com/screener/agp-bullish2-p5",
     "https://chartink.com/screener/aaa13-vp-sheshapathi",
     "https://chartink.com/screener/agp-shesha-bulloong1",
@@ -28,7 +29,8 @@ URLS = ["https://chartink.com/screener/copy-copy-copy-sreelakshmi-guruvayoorappa
     "https://chartink.com/screener/copy-sjbl6ch-shesha-buy-bollinger-band-weekly",
     "https://chartink.com/screener/copy-copy-bb-blaster-2",
     "https://chartink.com/screener/copy-atr-volume-f-o-200-wkly-rsi-70-16"
-   ]
+]
+ 
        
 sheet_id = "1bKrdupQL1LXAOXwmM1YsoN3xoGiMfS7pgzTkQFC3cjw"
 worksheet_names = ["p1","p2","p3","p4","p5","p6","p7","p8","p9","p10","p11","p12","p13","p14","p15","p16","p17","p18","p19","p20","p21","p22","p23","p24","p25"]
