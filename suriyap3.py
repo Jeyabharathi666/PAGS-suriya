@@ -28,8 +28,6 @@ URLS = ["https://chartink.com/screener/copy-copy-copy-sreelakshmi-guruvayoorappa
     "https://chartink.com/screener/copy-sjbl6ch-shesha-buy-bollinger-band-weekly",
     "https://chartink.com/screener/copy-copy-bb-blaster-2",
     "https://chartink.com/screener/copy-atr-volume-f-o-200-wkly-rsi-70-16"
-]
-    
    ]
        
 sheet_id = "1bKrdupQL1LXAOXwmM1YsoN3xoGiMfS7pgzTkQFC3cjw"
